@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>Chap2 Demo Sierpinski Gasket in 3D </title>
+    <script id="vertex-shader" type="x-shader/x-vertex">
+    attribute vec3 vPosition;
+    attribute vec4 vColor;
+	varying vec4 fColor;
+	void main(){
+        gl_Position =  vec4( vPosition, 1.0 );
+        fColor = vColor;
+	}
+	</script>
+
+    <script id="fragment-shader" type="x-shader/x-fragment">
+    precision mediump float;
+    varying vec4 fColor;
+	void main(){
+		gl_FragColor = fColor;
+	}
+	</script>
+
+    <script type="text/javascript" src="common/webgl-utils.js"></script>
+    <script type="text/javascript" src="common/initShaders.js"></script>
+    <script type="text/javascript" src="common/gl-matrix-min.js"></script>
+
+    <script type="text/javascript" src="js/lab2/gasket-3d.js"></script>
+</head>
+
+<body>
+    <span>请输入层次：</span>
+	<input type="text" id="setNum" oninput="value=value.replace(/[^0-7]/g,'')">
+    <input type="button" onclick="changeLevel();init();" value="变换">
+    <a href="index.html">
+        <button>返回目录</button>
+    </a>
+    </br>
+	<canvas id="gl-canvas" width="512" height="512">你的浏览器不支持HTML5 canvas元素</canvas>
+    <h5>任务b. 绘制三维效果的Sierpinski Gasket, 要求同任务a，也可与任务a集成在同一个界面中。</h5>
+
+
+    
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>Chap2 Demo Sierpinski Gasket </title>
+    <script id="vertex-shader" type="x-shader/x-vertex">
+	attribute vec4 vPosition;
+	void main(){
+		gl_Position = vPosition;
+	}
+	</script>
+
+    <script id="fragment-shader" type="x-shader/x-fragment">
+	precision mediump float;
+	void main(){
+		gl_FragColor = vec4( 1.0, 0.0, 0.0, 1.0 );
+	}
+	</script>
+
+    <script type="text/javascript" src="common/webgl-utils.js"></script>
+    <script type="text/javascript" src="common/initShaders.js"></script>
+    <script type="text/javascript" src="common/gl-matrix-min.js"></script>
+
+    <script type="text/javascript" src="js/lab2/gasket-triangles2-e.js"></script>
+</head>
+
+<body>
+	<span>请输入旋转角度：</span>
+	<input type="text" id="setAngle" oninput="value=value.replace(/[^\d]/g,'')">
+	<input type="button" onclick="changeLevel();initTriangles();" value="变换">
+	<a href="index.html">
+        <button>返回目录</button>
+    </a>
+    </br>
+	<canvas id="gl-canvas" width="512" height="512">你的浏览器不支持HTML5 canvas元素</canvas>
+	<h5>任务e. 在任务d中，如果旋转角度根据点到原点的距离$d$设定，即有$x’=x\cos(d\theta)-y\sin(d\theta)$, $y’=x\sin(d\theta)+y\cos(d\theta)$，其中，$d=\sqrt{(x^2+y^2)}$。</h5>
+</body>
+
+</html>
