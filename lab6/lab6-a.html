@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <script id="vertex-shader" type="x-shader/x-vertex">
+        attribute vec4 vPosition;
+
+		uniform mat4 modelViewMatrix;
+		uniform mat4 projectionMatrix;
+
+		void main()
+		{
+			gl_Position = projectionMatrix * modelViewMatrix * vPosition;
+		}
+	</script>
+
+    <script id="fragment-shader" type="x-shader/x-fragment">
+        precision mediump float;
+
+		void main()
+		{
+			gl_FragColor = vec4( 0.0, 0.0, 0.0, 1.0 );
+		}
+	</script>
+
+    <script type="text/javascript" src="../common/webgl-utils.js"></script>
+    <script type="text/javascript" src="../common/initShaders.js"></script>
+    <script type="text/javascript" src="../common/gl-matrix.js"></script>
+    <script type="text/javascript" src="../common/objloader.js"></script>
+
+    <script type="text/javascript" src="../js/lab6/wiresphere.js"></script>
+</head>
+
+<body onload="initSphere()">
+    <h3>任务a. 绘制空间中的一个球，基本思路参照教材描述。利用单位圆内接正四面体，以递归方式构建一个球体</h3>
+    <canvas id="gl-canvas" width="500" height="500">
+        你的浏览器不支持HTML5 Canvas元素
+    </canvas>
+    <a href="../index.html">
+        <button>返回目录</button>
+    </a>
+</body>
+
+</html>
