@@ -339,11 +339,11 @@ window.onload = function initWindow(){
 	configureCubeMapTexture();
 	
 	if( texture === null ){
-	    var url = "./textures/world.jpg";
+	    var url = "../iamges/world.jpg";
 	    configureTexture( url );
 	}
 	if( bumpTexture === null ){
-	    var url = "./textures/roof.jpg";
+	    var url = "../images/roof.jpg";
 	    configureBumpTexture(url);
 	}
 	
@@ -375,7 +375,7 @@ function initInterface(){
 	textureFileInput = document.getElementById("textureInput");
 	textureFileInput.addEventListener("change", function(event){
 		var file = textureFileInput.files[0];
-		var prehead = "./textures/";
+		var prehead = "./images/";
 		var imgurl = prehead.concat(file.name);
 		configureTexture( imgurl );
 	});
@@ -383,7 +383,7 @@ function initInterface(){
 	bumpFileInput = document.getElementById("bumpInput");
 	bumpFileInput.addEventListener("change", function(event){
 		var file = bumpFileInput.files[0];
-		var prehead = "./textures/";
+		var prehead = "./images/";
 		var imgurl = prehead.concat(file.name);
 		configureBumpTexture( imgurl );
 	});
@@ -917,12 +917,12 @@ function configureBumpTexture( url ){
 }
 
 var faceUrl = [
-	'./textures/pos-x.jpg',
-	'./textures/neg-x.jpg',
-	'./textures/neg-y.jpg',
-	'./textures/pos-y.jpg',
-	'./textures/pos-z.jpg',
-	'./textures/neg-z.jpg',
+	'../images/pos-x.jpg',
+	'../images/neg-x.jpg',
+	'../images/neg-y.jpg',
+	'../images/pos-y.jpg',
+	'../images/pos-z.jpg',
+	'../images/neg-z.jpg',
 ];
 
 var cubemap_image_cnt = 0;    
